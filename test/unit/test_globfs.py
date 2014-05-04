@@ -5,7 +5,7 @@ def test_globfs_exists():
         assert False, "GlobFS class doesn't exists."
 
 
-def test_globfs_config():
+def test_globfs_config(globfs1):
     from globfs import GlobFS
     g1 = GlobFS(root='/tmp/test')
 

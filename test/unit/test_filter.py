@@ -5,25 +5,19 @@ def test_filter_exists():
         assert False, "Filter class doesn't exists."
 
 
-def test_filter_basic():
-    from globfs.filter import Filter
-    filter1 = Filter('*.jpg')
-
+def test_filter_basic(filter1, filter2):
     assert filter1.match('sasha.jpg')
     assert not filter1.match('sunny.png')
 
-    filter2 = Filter('???.*.log')
     assert filter2.match('523.apache.log')
     assert not filter2.match('x523.apache.log')
 
 
-def test_filter_caseinsensitive():
+def test_filter_caseinsensitive(ifilter1, ifilter2):
     from globfs.filter import Filter
-    filter1 = Filter('*.jpG', insensitive=True)
 
-    assert filter1.match('sAsHa.jPg')
-    assert not filter1.match('SUnnY.PnG')
+    assert ifilter1.match('sAsHa.jPg')
+    assert not ifilter1.match('SUnnY.PnG')
 
-    filter2 = Filter('???.*.lOg', insensitive=True)
-    assert filter2.match('523.aPaCHe.Log')
-    assert not filter2.match('x523.apaChE.LOg')
+    assert ifilter2.match('523.aPaCHe.Log')
+    assert not ifilter2.match('x523.apaChE.LOg')
