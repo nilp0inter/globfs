@@ -11,3 +11,9 @@ def test_globfs_config(globfs1):
 
     assert g1.root == '/tmp/test'
     assert isinstance(g1.branches, list)
+
+
+def test_globfs_add_branch(globfs1, branch1):
+    globfs1.add_branch(branch1)
+    assert branch1 in globfs1.branches
+
