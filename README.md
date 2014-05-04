@@ -9,7 +9,8 @@ Development
 
  - Based on Python2.7.
  - Under branch `develop`.
- - Running the tests::
-
+ - Running the tests:
+```bash
    $ pip install -r requirements/develop.txt
    $ tox
+```
