@@ -4,6 +4,7 @@ def test_filter_exists():
     except:
         assert False, "Filter class doesn't exists."
 
+
 def test_filter_basic():
     from globfs.filter import Filter
     filter1 = Filter('*.jpg')
@@ -14,6 +15,7 @@ def test_filter_basic():
     filter2 = Filter('???.*.log')
     assert filter2.match('523.apache.log')
     assert not filter2.match('x523.apache.log')
+
 
 def test_filter_caseinsensitive():
     from globfs.filter import Filter
